@@ -143,7 +143,8 @@ fn update_grid_visuals(mut query: Query<(&GridCell, &mut Sprite), Changed<GridCe
 
 fn setup(mut commands: Commands, config: Res<GameConfig>) {
     commands.spawn(Camera2dBundle::default());
-    println!("{:?}", config);
+    info!("{:?}", config);
+
     spawn_grid(&mut commands, &config);
 }
 
@@ -184,9 +185,9 @@ fn setup_ui(mut commands: Commands) {
 
 fn main() {
     let game_config = GameConfig {
-        width: 30,
-        height: 30,
-        cell_size: 20.0,
+        width: 50,
+        height: 50,
+        cell_size: 10.0,
         initial_dencity: 0.3,
         update_interval_millis: 100,
     };
